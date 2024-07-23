@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpage Layout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .container {
+            display: inline-block;
+            text-align: left;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        
+        th, td {
+            padding: 8px;
+            text-align: center;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+        }
+
+        form div {
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        ul ul {
+            list-style-type: circle;
+        }
+
+        b {
+            display: block;
+            margin: 20px 0;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://masai-course.s3.ap-south-1.amazonaws.com/resources/images/masai_banner.jpg" alt="Poster Image" width="400" height="auto">
+
+        <p>We will be learning the following this week:</p>
+
+        <table>
+            <tr>
+                <td>Day 1</td>
+                <td>Day 2</td>
+                <td>Day 3</td>
+                <td>Day 4</td>
+            </tr>
+            <tr>
+                <td>Linux 1</td>
+                <td>HTML</td>
+                <td>Linux 2</td>
+                <td>Linux 3</td>
+            </tr>
+            <tr>
+                <td>GIT 1</td>
+                <td>CSS</td>
+                <td>GIT 2</td>
+                <td>Bootstrap</td>
+            </tr>
+        </table>
+
+        <p>If you want to contact me please fill in this form:</p>
+
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" />
+        </div>
+        <div>
+            <label for="phoneno">Phone No:</label>
+            <input type="text" id="phoneno" name="phoneno" />
+        </div>
+        <div>
+            <label for="emailid">Email Id:</label>
+            <input type="text" id="emailid" name="emailid" />
+        </div>
+
+        <br>
+
+        <b>The following things are important to be a Programmer:</b>
+
+        <ul>
+            <li>A Problem Solving mindset</li>
+            <li>Consistency
+                <ul>
+                    <li>Clean code</li>
+                    <li>Thorough knowledge of core concepts</li>
+                    <li>Readable code</li>
+                </ul>
+            </li>
+            <li>Speed</li>
+        </ul>
+    </div>
+</body>
+</html>
