@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested Structure Table</title>
+    <style>
+        table {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 8px;
+            border-collapse: collapse;
+            border: 1px solid;
+        }
+
+        table th {
+            padding: 10px;
+            border: 1px solid;
+            text-align: left;
+        }
+
+        table td {
+            padding: 10px;
+            border: 1px solid;
+            text-align: center;
+        }
+
+  
+    </style>
+</head>
+
+<body>
+    <table>
+        
+        <tbody>
+            <tr>
+                <td colspan="2">
+                    <table >
+                        <tr>
+                            <td><input type="text" id="firstName" name="firstName" placeholder="First Name"></td>
+                            <td><input type="text" id="lastName" name="lastName" placeholder="Last Name"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <select id="country" name="country">
+                                    <option value="">Select Country</option>
+                                    <option value="India">India</option>
+                                    <option value="UAE">UAE</option>
+                                    <option value="UK">UK</option>
+                                    <option value="Australia">Australia</option>
+                                    <option value="US">US</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <ul >
+                        <li>Hello </li>
+                        <li>This is </li>
+                        <li>an Un-order list</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <label for="comments">Comments: </label><br>
+                    <textarea id="comments" name="comments"></textarea><br>
+                </td>
+                <td>
+                    <button type="submit">Submit</button>
+                    <button type="reset">Reset</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
