@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        form {
+            background-color: white;
+            padding: 90px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+        }
+
+        label {
+            display: inline-flex;
+            margin-bottom: 2%;
+        }
+        .submit-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .submit-container input[type="submit"] {
+            background-color: #007bff6c;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-container input[type="submit"]:hover {
+            background-color: #00adb3;
+            color: black;
+        }
+
+
+        .error {
+            color: red;
+            display: none;
+        }
+        h1{
+            color: #36454F;
+            justify-content: center;
+            justify-content: center;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="myForm">
+        <h1>Registration Form</h1> 
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required />
+        <br />
+        <label for="email">Enter your email:</label>
+        <input type="email" id="email" required />
+        <br />
+        <label for="password">Enter your Password:</label>
+        <input type="password" id="password" minlength="8" maxlength="20" required />
+        <br />
+        <label for="confirm_password">Confirm Password:</label>
+        <input type="password" id="confirm_password" minlength="8" maxlength="20" required />
+        <span id="passwordError" class="error">Passwords do not match.</span>
+        <br />
+        <label for="bday">Enter your Birth Date:</label>
+        <input type="date" id="bday" required />
+        <span id="bdayError" class="error">You must be at least 18 years old.</span>
+        <br />
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender">
+            <option value="selectgender">Select your gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+        <br />
+        <label>Select the Subscription:</label>
+        <input type="radio" id="subscriptionChoice1" name="choice" value="Free" />
+        <label for="subscriptionChoice1">Free</label>
+
+        <input type="radio" id="subscriptionChoice2" name="choice" value="Basic" />
+        <label for="subscriptionChoice2">Basic</label>
+
+        <input type="radio" id="subscriptionChoice3" name="choice" value="Premium" />
+        <label for="subscriptionChoice3">Premium</label>
+        <br />
+        <label>Select the Hobbies:</label>
+        <div>
+            <input type="checkbox" id="reading" name="hobbies" value="reading" />
+            <label for="reading">Reading</label>
+        </div>
+        <div>
+            <input type="checkbox" id="travelling" name="hobbies" value="travelling" />
+            <label for="travelling">Travelling</label>
+        </div>
+        <div>
+            <input type="checkbox" id="coding" name="hobbies" value="coding" />
+            <label for="coding">Coding</label>
+        </div>
+        <label for="avatar">Choose a Profile Picture:</label>
+        <div>
+            <input type="file" id="avatar" name="avatar" accept="image/png, image/jpg" required />
+        </div>
+        <br />
+        <div class="submit-container">
+            <input type="submit" value="Submit" />
+        </div>
+    </form>
+
+    <script>
+        document.getElementById('bday').addEventListener('input', function () {
+            const bdayInput = document.getElementById('bday').value;
+            const birthDate = new Date(bdayInput);
+            const today = new Date();
+            let age = today.getFullYear() - birthDate.getFullYear();
+            const monthDiff = today.getMonth() - birthDate.getMonth();
+            const dayDiff = today.getDate() - birthDate.getDate();
+
+            if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+                age--;
+            }
+
+            const bdayError = document.getElementById('bdayError');
+
+            if (age < 18) {
+                bdayError.style.display = 'inline';
+            } else {
+                bdayError.style.display = 'none';
+            }
+        });
+
+        document.getElementById('myForm').addEventListener('submit', function (event) {
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm_password').value;
+            const bdayInput = document.getElementById('bday').value;
+            const birthDate = new Date(bdayInput);
+            const today = new Date();
+            let age = today.getFullYear() - birthDate.getFullYear();
+            const monthDiff = today.getMonth() - birthDate.getMonth();
+            const dayDiff = today.getDate() - birthDate.getDate();
+
+            if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+                age--;
+            }
+
+            const passwordError = document.getElementById('passwordError');
+            const bdayError = document.getElementById('bdayError');
+
+            if (password !== confirmPassword) {
+                event.preventDefault();
+                passwordError.style.display = 'inline';
+                return;
+            } else {
+                passwordError.style.display = 'none';
+            }
+
+            if (age < 18) {
+                event.preventDefault();
+                bdayError.style.display = 'inline';
+            } else {
+                bdayError.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+
+</html>
