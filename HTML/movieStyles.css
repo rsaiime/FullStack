@@ -1,0 +1,50 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+}
+
+main.movie-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Space between items */
+    padding: 20px;
+}
+
+.movie-item {
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 390px;
+    overflow: hidden;
+}
+
+.movie-item img {
+    width: 100%;
+    height: auto;
+}
+
+.movie-details {
+    padding: 15px;
+}
+
+.movie-details h2 {
+    font-size: 1.2em;
+    margin: 0 0 10px;
+    text-align: center;
+}
+
+.movie-details p {
+    font-size: 0.9em;
+    color: #555;
+    text-align: center;
+}
+
