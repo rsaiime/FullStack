@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+    <style>
+        h1 {
+            text-align: center;
+            color: black;
+        }
+
+        label {
+            display: inline-flex;
+            margin-bottom: 8px;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        form {
+            background-color: white;
+            padding: 90px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .range-container {
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+        }
+
+        .slider {
+            width: 80%;
+            margin-bottom: 5px;
+        }
+
+        .slider-labels {
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+        }
+
+        .submit-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        /* Default Submit Button Style */
+        .submit-container input[type="submit"] {
+            background-color: #007bff6c;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: not-allowed;
+            /* Default cursor when checkbox is not checked */
+            color: #fff;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Submit Button Style When Checkbox is Checked */
+        #agree:checked~.submit-container input[type="submit"] {
+            background-color: #00adb3;
+            cursor: pointer;
+            /* Change cursor when checkbox is checked */
+        }
+
+        .submit-container input[type="submit"]:hover {
+            background-color: #00adb3;
+            color: black;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 5px;
+        }
+
+        .modal:target {
+            display: block;
+        }
+
+        .modal-content h2 {
+            margin-top: 0;
+        }
+
+        .modal .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .modal .close:hover,
+        .modal .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="myForm">
+        <h1>Feedback Form</h1>
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required />
+        <br />
+        <label for="email">Enter your email:</label>
+        <input type="email" id="email" required />
+        <br />
+        <label for="comments" style="display: block; text-align: left;">Comments:</label>
+        <textarea id="comments" name="comments" rows="4" cols="50" placeholder="Enter your comments here..."></textarea>
+        <br />
+        <label for="rangeInput">Select:</label>
+        <div class="range-container">
+            <input type="range" id="rangeInput" class="slider" min="0" max="10" step="1" />
+            <div class="slider-labels">
+                <span>0</span>
+                <span>1</span>
+                <span>2</span>
+                <span>3</span>
+                <span>4</span>
+                <span>5</span>
+                <span>6</span>
+                <span>7</span>
+                <span>8</span>
+                <span>9</span>
+                <span>10</span>
+            </div>
+        </div>
+        <br />
+        <label for="compliment">Choose the option :</label>
+        <input type="radio" id="compliment" name="option" value="compliment" />
+        <label for="compliment">Compliment</label>
+        <input type="radio" id="complaint" name="option" value="complaint" />
+        <label for="complaint">Complaint</label>
+        <input type="radio" id="suggestion" name="option" value="suggestion" />
+        <label for="suggestion">Suggestion</label>
+
+
+        <label for="feedbackPolicy" style="display: block; text-align: left;">
+            <a href="#termsModal" class="logo">
+                <span class="logo-text"><b>Feedback Policy</b></span>
+            </a>
+        </label>
+        <div>
+            <input type="checkbox" id="agree" name="agree" style="display: inline-block;text-align: left; " />
+            <label for="agree" style="display: inline-block; vertical-align: middle; margin-left: 1px;">Agree</label>
+
+
+            <div class="submit-container">
+                <input type="submit" value="Submit" />
+            </div>
+    </form>
+
+    <!-- Modal -->
+    <div id="termsModal" class="modal">
+        <div class="modal-content">
+            <a href="#" class="close">&times;</a>
+            <h2>Terms and Conditions</h2>
+            <p>
+                <b>1. Introduction</b><br>
+                Welcome to our feedback portal. By using this platform, you agree to adhere to the following terms and
+                conditions.
+            </p>
+            <p>
+                <b><i>2. Feedback Submission</i></b><br>
+                You agree to provide honest and constructive feedback. Any submission that contains <span
+                    style="color: red; ">abusive</span> language will be rejected.
+            </p>
+            <p>
+                <b>3. Privacy Policy</b><br>
+                All feedback submitted will be processed in accordance with our <i><u>Privacy Policy</u></i>. Your
+                personal data will be kept confidential and will not be shared with third parties without your consent.
+            </p>
+            <p>
+                <b><u>4. Intellectual Property</u></b><br>
+                By submitting feedback, you grant us a non-exclusive, royalty-free license to use, reproduce, and modify
+                the content for the purpose of improving our services.
+            </p>
+            <p>
+                <b>5. Limitation of Liability</b><br>
+                We are not responsible for any direct, indirect, incidental, or consequential damages that may arise
+                from the use of this feedback platform. Your use is at your own risk.
+            </p>
+            <p>
+                <b><i>6. Changes to Terms</i></b><br>
+                We may update these terms from time to time. Any changes will be posted on this page, and it is your
+                responsibility to review the terms periodically.
+            </p>
+            <p>
+                <b>7. Governing Law</b><br>
+                These terms are governed by the laws of India. Any disputes arising from the use of this platform will
+                be resolved in the courts of India.
+            </p>
+            <p>
+                <b><i><u>8. Contact Information</u></i></b><br>
+                If you have any questions or concerns about these terms, please contact us at FLM.
+            </p>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
