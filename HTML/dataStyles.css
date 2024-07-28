@@ -1,0 +1,126 @@
+/* Reset default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: white;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.cart {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap to the next line if there’s not enough space */
+    gap: 20px; /* Space between cart items */
+}
+
+.cart-item {
+    display: flex;
+    flex-direction: column; /* Align items vertically inside the cart item */
+    padding: 10px;
+    border-radius: 5px;
+    width: 300px; /* Set a fixed width for each cart item */
+}
+
+.cart-item img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px; /* Space below the image */
+}
+
+.item-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Align content between top and bottom */
+    height: 100%;
+}
+
+.item-details .beverages {
+    margin-top: auto; /* Push the price to the bottom */
+    text-align: center;
+    font-weight: bold;
+}
+
+.item-details .fashion {
+    margin-top: auto; /* Push the price to the bottom */
+    text-align: center;
+    font-weight: bold;
+}
+
+.item-details .techie {
+    margin-top: auto; /* Push the price to the bottom */
+    text-align: center;
+    font-weight: bold;
+}
+
+
+.item-details .readmore {
+    margin-top: auto; /* Push the price to the bottom */
+    text-align: center;
+}
+
+.item-details .beveragesdata {
+    padding: 5px 10px;
+    color: black;
+    border-radius: 5px;
+    text-align: left;
+    font-family: cursive;    
+    font-size: 13px; /* Font size */
+    line-height: 1; /* Line height for spacing between lines */
+}
+
+
+
+.item-details .fashiondata {
+    padding: 5px 10px;
+    color: black;
+    border-radius: 5px;
+    text-align: left;
+    font-family: cursive;    
+    font-size: 13px; /* Font size */
+    line-height: 1; /* Line height for spacing between lines */
+}
+
+.item-details .techdata {
+    padding: 5px 10px;
+    color: black;
+    border-radius: 5px;
+    text-align: left;
+    font-family: cursive;    
+    font-size: 13px; /* Font size */
+    line-height: 1; /* Line height for spacing between lines */
+}
+
+
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+footer button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+footer button:hover {
+    background-color: #45a049;
+}
